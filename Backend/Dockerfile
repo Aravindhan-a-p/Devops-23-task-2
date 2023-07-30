@@ -1,10 +1,10 @@
 FROM rust
-RUN sudo apt get -y update
-RUN sudo apt 
-RUN sudo apt install libpq-dev
+RUN sudo apt-get update
+RUN sudo apt-get -y upgrade
+RUN sudo apt-get -y install libpq-dev
 WORKDIR .
 COPY . .
 RUN  cargo install diesel_cli --no-default-features --features postgres
 EXPOSE 8000
-CMD [ "cargo","run","--release" ]
+CMD [  "diesel" , "setup " && "cargo" , "run" ]
 
