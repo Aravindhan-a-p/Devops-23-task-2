@@ -1,5 +1,7 @@
 FROM rust
-sudo apt install libpq-dev
+RUN sudo apt get -y update
+RUN sudo apt 
+RUN sudo apt install libpq-dev
 WORKDIR .
 COPY . .
 RUN  cargo install diesel_cli --no-default-features --features postgres
